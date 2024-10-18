@@ -19,9 +19,6 @@ link:https://api.coindesk.com/v1/bpi/currentprice.json
 
 
 
-
-
-
 【/getcoininfo get】呼叫 coindesk 的 API,並進行資料轉換,組成新 API。
 說明:
 此新 API 提供:
@@ -31,6 +28,8 @@ B. 幣別相關資訊(幣別,幣別中文名稱,以及匯率)。
 getCoinDeskRowData(): 取得原始資料 
 cointransfer(rowdata) :轉換json資料
 jsonTOOBJ() : json轉object
+
+
 
 針對Table 的CRUD
 【/coindesk/insert】 插入幣別中英對照

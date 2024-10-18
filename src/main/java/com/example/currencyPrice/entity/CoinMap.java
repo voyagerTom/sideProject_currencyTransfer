@@ -16,4 +16,28 @@ public class CoinMap {
     @Column(name="english")
     private String coinEnglish;
 
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCoinChinese() {
+        return coinChinese;
+    }
+
+    public void setCoinChinese(String coinChinese) {
+        this.coinChinese = coinChinese;
+    }
+
+    public String getCoinEnglish() {
+        return coinEnglish;
+    }
+
+    public void setCoinEnglish(String coinEnglish) {
+        this.coinEnglish = coinEnglish;
+    }
 }
