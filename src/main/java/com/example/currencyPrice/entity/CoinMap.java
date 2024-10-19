@@ -40,4 +40,14 @@ public class CoinMap {
     public void setCoinEnglish(String coinEnglish) {
         this.coinEnglish = coinEnglish;
     }
+
+
+    @Override
+    public String toString() {
+        return "CoinMap{" +
+                "id=" + id +
+                ", coinChinese='" + coinChinese + '\'' +
+                ", coinEnglish='" + coinEnglish + '\'' +
+                '}';
+    }
 }

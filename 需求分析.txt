@@ -33,9 +33,10 @@ jsonTOOBJ() : json轉object
 
 針對Table 的CRUD
 【/coindesk/insert】 插入幣別中英對照
-【/coindesk/deletebyabr】 刪除一筆幣別中英對照
-【/coindesk/updatebyabr】 更新一筆幣別中英對照
-【/coindesk/getcurrencyinfobyabr】  查詢一筆幣別中英對照
+【/coindesk/deletebyid】 刪除一筆幣別中英對照
+【/coindesk/updatebyid/{coinID}/{updateItem}】 更新一筆幣別中英對照，依照ID /updateItem 去更新英文或中文
+【/coindesk/getcoinbyid】  查詢一筆幣別中英對照
+【/coindesk/showallcoin】  查詢中英對照
 
 
 
