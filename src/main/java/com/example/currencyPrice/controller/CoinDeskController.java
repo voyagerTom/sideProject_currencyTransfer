@@ -44,7 +44,12 @@ public class CoinDeskController {
     public ResponseEntity<CoinMap> getCoinByID(@RequestParam int id) {
         //其他過濾項目略(如禁止重複資料插入)
         Optional<CoinMap> coinMapList = coinMapDao.findById(id);
-        return ResponseEntity.status(200).body(coinMapList.orElse(null));
+        CoinMap targetRS=coinMapList.orElse(null);
+
+        if(targetRS==null){
+            return ResponseEntity.status(204).body(null);
+        }
+        return ResponseEntity.status(200).body(targetRS);
     }
 
 
@@ -72,7 +77,7 @@ public class CoinDeskController {
         CoinMap target = coinList.orElse(null);
 
         if (target == null) {
-            return ResponseEntity.status(200).body("資料庫無 ID:" + coinid + " 的資料");
+            return ResponseEntity.status(200).body("資料庫無 ID:" + coinid + " 的資料可刪除");
         }
         coinMapDao.deleteById(target.getId());
 
@@ -88,13 +93,11 @@ public class CoinDeskController {
             return ResponseEntity.status(400).body("變更項目輸入錯誤");
         }
 
-
         Optional<CoinMap> coinList = coinMapDao.findById(coinID);
         CoinMap target = coinList.orElse(null);
 
         if (target == null) {
-            String trnmsg = String.valueOf(coinMapinsert(coinMap));
-            return ResponseEntity.status(200).body("資料庫無 " + coinID + " 資料，已直接添加資料\n " + trnmsg);
+            return ResponseEntity.status(200).body("資料庫無 " + coinID + " 資料，請先添加");
         }
 
 
@@ -109,6 +112,5 @@ public class CoinDeskController {
 
         return ResponseEntity.status(200).body(target.toString() + " 資料更新成功");
     }
-
 
 }
