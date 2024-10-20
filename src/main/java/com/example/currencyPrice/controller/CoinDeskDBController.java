@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController()
 @RequestMapping("/coindesk")
-public class CoinDeskController {
+public class CoinDeskDBController {
 
     @Autowired
     private CoinMapDao coinMapDao;
@@ -113,4 +113,17 @@ public class CoinDeskController {
         return ResponseEntity.status(200).body(target.toString() + " 資料更新成功");
     }
 
+
+    //用英文名稱取得中文
+    public String getchineseByEng(String code) {
+        System.out.println("code :"+code);
+        //其他過濾項目略(如禁止重複資料插入)
+        List<CoinMap> coinMapList = coinMapDao.findByCoinEnglish(code);
+        if (coinMapList.size()==0){
+            return "Chinese Name Not Found";
+        }
+        CoinMap targetRS=coinMapList.get(0);
+        return targetRS.getCoinChinese();
+//        return targetRS.getCoinChinese();
+    }
 }
