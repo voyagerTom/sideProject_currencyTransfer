@@ -22,8 +22,12 @@ class CoinDeskAPIControllerTest {
     @Test
     void getRowdata() throws Exception {
         RequestBuilder rb= MockMvcRequestBuilders.get("/api/getrowdata");
-        mockMvc.perform(rb)
-                .andExpect(status().isOk());
+        MvcResult rs =mockMvc.perform(rb)
+                .andExpect(status().isOk())
+                .andReturn();
+
+        System.out.println("getRowdata()試驗結果:--------------------" );
+        System.out.println(rs.getResponse().getContentAsString());
     }
 
     @Test
@@ -33,6 +37,8 @@ class CoinDeskAPIControllerTest {
         MvcResult rs=mockMvc.perform(rb)
                 .andExpect(status().isOk())
                 .andReturn();
+
+        System.out.println("getCoinSimpleData()試驗結果:--------------------" );
         System.out.println(rs.getResponse().getContentAsString());
     }
 }

@@ -12,14 +12,14 @@ coindesk API:https://api.coindesk.com/v1/bpi/currentprice.json
 API 規格:
 
 
-【/getcoindeskrowdata  get】呼叫 coindesk 的 API，單純取的JSON。
+【/getrowdata  get】呼叫 coindesk 的 API，單純取的JSON。
 說明:能抓到下列網址json資料即可
 link:https://api.coindesk.com/v1/bpi/currentprice.json
 其他:none
 
 
 
-【/getcoininfo get】呼叫 coindesk 的 API,並進行資料轉換,組成新 API。
+【/getcoinsimpledata get】呼叫 coindesk 的 API,並進行資料轉換,組成新 API。
 說明:
 此新 API 提供:
 A. 更新時間(時間格式範例:1990/01/01 00:00:00)。
