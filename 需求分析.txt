@@ -43,6 +43,10 @@ jsonTOOBJ() : json轉object
 
 
 ########   DB 設計 ##########
+schema放在 resource內
+schema.sql
+data.sql
+
 currency_chinese
 
 currency_info
